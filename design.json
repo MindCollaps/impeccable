@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-27T00:00:00.000Z",
+  "title": "Design System: ProductManager",
+  "extensions": {
+    "colorMeta": {
+      "surface-deep":          { "role": "neutral",   "displayName": "Ledger Base",             "canonical": "#131316", "tonalRamp": ["#0a0a0c", "#131316", "#18181B", "#202024", "#26262C", "#2B2B33", "#30303C", "#3c3c3f"] },
+      "surface-base":          { "role": "neutral",   "displayName": "Workshop Floor",          "canonical": "#18181B", "tonalRamp": ["#0a0a0c", "#131316", "#18181B", "#202024", "#26262C", "#2B2B33", "#30303C", "#3c3c3f"] },
+      "surface-elevated":      { "role": "neutral",   "displayName": "Surface Card",            "canonical": "#202024", "tonalRamp": ["#0a0a0c", "#131316", "#18181B", "#202024", "#26262C", "#2B2B33", "#30303C", "#3c3c3f"] },
+      "surface-raised":        { "role": "neutral",   "displayName": "Surface Raised",          "canonical": "#26262C", "tonalRamp": ["#0a0a0c", "#131316", "#18181B", "#202024", "#26262C", "#2B2B33", "#30303C", "#3c3c3f"] },
+      "surface-border":        { "role": "neutral",   "displayName": "Ghost Border Active",     "canonical": "#30303C", "tonalRamp": ["#0a0a0c", "#131316", "#18181B", "#202024", "#26262C", "#2B2B33", "#30303C", "#3c3c3f"] },
+      "text-primary":          { "role": "neutral",   "displayName": "Text Primary",            "canonical": "#DEDEE7", "tonalRamp": ["#aaaaac", "#bfbfc2", "#D5D5E4", "#DEDEE7", "#E6E6EB", "#EDEDF2", "#F2F2F7", "#FAFAFA"] },
+      "text-muted":            { "role": "neutral",   "displayName": "Text Muted",              "canonical": "#aaaaac", "tonalRamp": ["#525255", "#3c3c3f", "#30303C", "#aaaaac", "#bfbfc2", "#D5D5E4", "#DEDEE7", "#FAFAFA"] },
+      "primary":               { "role": "primary",   "displayName": "Technical Violet",        "canonical": "#7c59bc", "tonalRamp": ["#1e0f4a", "#2f1970", "#3d2594", "#512da8", "#6743b2", "#7c59bc", "#8f70c6", "#a287d0"] },
+      "primary-hover":         { "role": "primary",   "displayName": "Technical Violet Light",  "canonical": "#8f70c6", "tonalRamp": ["#1e0f4a", "#2f1970", "#3d2594", "#512da8", "#6743b2", "#7c59bc", "#8f70c6", "#a287d0"] },
+      "primary-active":        { "role": "primary",   "displayName": "Technical Violet Deep",   "canonical": "#6743b2", "tonalRamp": ["#1e0f4a", "#2f1970", "#3d2594", "#512da8", "#6743b2", "#7c59bc", "#8f70c6", "#a287d0"] },
+      "secondary":             { "role": "secondary", "displayName": "Workshop Green",           "canonical": "#587c58", "tonalRamp": ["#0f1f0f", "#1e3a1e", "#2d512a", "#436743", "#587c58", "#719f71", "#86b287", "#a8c9a8"] },
+      "success":               { "role": "tertiary",  "displayName": "Repair Green",            "canonical": "#66bb58", "tonalRamp": ["#1a4012", "#2d6b25", "#46a92d", "#57b143", "#66bb58", "#7dc671", "#90d086", "#b5e0aa"] },
+      "warning":               { "role": "tertiary",  "displayName": "Amber Warning",           "canonical": "#bb9d58", "tonalRamp": ["#3d2c0a", "#6b4d18", "#a97d2d", "#b18c43", "#bb9d58", "#c6af71", "#d0c686", "#e0d8b0"] },
+      "error":                 { "role": "tertiary",  "displayName": "Rose Error",              "canonical": "#bb5866", "tonalRamp": ["#3d0a15", "#6b1828", "#a92d46", "#b14357", "#bb5866", "#c6717d", "#d08690", "#e0b0b5"] },
+      "info":                  { "role": "tertiary",  "displayName": "Teal Info",               "canonical": "#58bbad", "tonalRamp": ["#0f3630", "#1e5c54", "#2da990", "#43b19d", "#58bbad", "#71c6bb", "#86d0c6", "#b0e0d8"] }
+    },
+    "typographyMeta": {
+      "body":  { "displayName": "Body",  "purpose": "Descriptions, notes, message content, passive reading." },
+      "label": { "displayName": "Label", "purpose": "Form labels, column headers, button text, nav items — all interactive labeling." },
+      "small": { "displayName": "Small", "purpose": "Helper text, counters, metadata." },
+      "fine":  { "displayName": "Fine",  "purpose": "Character counts, link underlines, mobile overrides for all sizes." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "standard",      "value": "0.3s ease",    "purpose": "Default state transition on buttons and inputs. PC-only (gated behind @include pc / @include hover)." },
+      { "name": "popup-fade",    "value": "0.5s ease",    "purpose": "Opacity fade for modal/popup enter and leave transitions." },
+      { "name": "checkbox-snap", "value": "0.3s ease",    "purpose": "SVG checkmark scale(0) → scale(1) on checkbox check." },
+      { "name": "loader-spin",   "value": "1s linear infinite", "purpose": "3D perspective box-shadow animation for the loading indicator." }
+    ],
+    "breakpoints": [
+      { "name": "mobile-only", "value": "max-width: 699px",  "purpose": "Extra-small layout: font sizes drop to 10px, compact padding." },
+      { "name": "tablet",      "value": "700px – 1365px",    "purpose": "Mid-range: shares mobile font sizing, touch-friendly targets." },
+      { "name": "pc",          "value": "min-width: 1366px", "purpose": "Desktop: hover transitions enabled, full font scale." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main action. One per context. Violet background, always 40px tall.",
+      "html": "<button class=\"ds-btn-primary\"><span>Speichern</span></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 40px; padding: 8px 20px; background: #7c59bc; color: #DEDEE7; border: none; border-radius: 4px; font-family: 'Noto Sans', Arial, sans-serif; font-size: 13px; font-weight: 600; line-height: 1; cursor: pointer; text-decoration: none; transition: background 0.3s; user-select: none; } .ds-btn-primary:hover { background: #8f70c6; } .ds-btn-primary:active, .ds-btn-primary:focus-visible { background: #6743b2; outline: none; } .ds-btn-primary:disabled, .ds-btn-primary[aria-disabled='true'] { opacity: 0.24; pointer-events: none; background: rgba(250,250,250,0.04); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost action subordinate to primary. Transparent at rest.",
+      "html": "<button class=\"ds-btn-secondary\"><span>Abbrechen</span></button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 40px; padding: 8px 20px; background: transparent; color: #DEDEE7; border: none; border-radius: 4px; font-family: 'Noto Sans', Arial, sans-serif; font-size: 13px; font-weight: 600; line-height: 1; cursor: pointer; text-decoration: none; transition: background 0.3s; user-select: none; } .ds-btn-secondary:hover { background: rgba(250,250,250,0.04); } .ds-btn-secondary:active, .ds-btn-secondary:focus-visible { background: #7c59bc; outline: none; }"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "button-icon",
+      "description": "Square ghost button for icon-only actions. 40×40 or 32×32.",
+      "html": "<button class=\"ds-btn-icon\" aria-label=\"Schließen\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M18 6L6 18M6 6l12 12\"/></svg></button>",
+      "css": ".ds-btn-icon { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 8px; background: transparent; color: #DEDEE7; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s; } .ds-btn-icon:hover { background: rgba(250,250,250,0.04); } .ds-btn-icon:active, .ds-btn-icon:focus-visible { background: #7c59bc; outline: none; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Standard text field. Ghost border appears on hover and focus.",
+      "html": "<div class=\"ds-input\"><label class=\"ds-input__label\">Gerätename</label><div class=\"ds-input__container\"><input class=\"ds-input__field\" type=\"text\" placeholder=\"z. B. iPhone 16 Pro\" /></div></div>",
+      "css": ".ds-input { width: 100%; } .ds-input__label { display: block; margin-bottom: 8px; font-family: 'Noto Sans', Arial, sans-serif; font-size: 13px; font-weight: 600; color: #DEDEE7; } .ds-input__container { display: flex; align-items: center; width: 100%; padding: 0 16px; border: 2px solid transparent; border-radius: 8px; background: #202024; transition: border-color 0.3s; } .ds-input__container:hover { border-color: #30303C; } .ds-input__container:focus-within { border-color: #7c59bc; } .ds-input__field { width: 100%; padding: 12px 0; border: none; background: none; outline: none; font-family: 'Noto Sans', Arial, sans-serif; font-size: 13px; font-weight: 600; color: #DEDEE7; } .ds-input__field::placeholder { color: rgba(222, 222, 231, 0.5); }"
+    },
+    {
+      "name": "Checkbox",
+      "kind": "custom",
+      "description": "16×16 checkbox with animated checkmark. Violet fill on checked.",
+      "html": "<label class=\"ds-checkbox\"><div class=\"ds-checkbox__box\"><svg class=\"ds-checkbox__check\" width=\"10\" height=\"10\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"><path d=\"M5 13l4 4L19 7\"/></svg></div><span class=\"ds-checkbox__label\">Arbeitsschritt erledigt</span></label>",
+      "css": ".ds-checkbox { display: flex; align-items: center; gap: 16px; cursor: pointer; user-select: none; font-family: 'Noto Sans', Arial, sans-serif; font-size: 12px; font-weight: 600; color: #DEDEE7; } .ds-checkbox__box { display: flex; align-items: center; justify-content: center; width: 16px; height: 16px; min-width: 16px; border: 1px solid #EDEDF2; border-radius: 4px; transition: background 0.3s, border-color 0.3s; } .ds-checkbox__check { transition: transform 0.3s; transform: scale(0); color: #DEDEE7; } .ds-checkbox input:checked ~ .ds-checkbox__box, .ds-checkbox--checked .ds-checkbox__box { background: #7c59bc; border-color: #7c59bc; } .ds-checkbox--checked .ds-checkbox__check { transform: scale(1); }"
+    },
+    {
+      "name": "Status Badge — Success",
+      "kind": "chip",
+      "refersTo": "status-badge",
+      "description": "Semantic repair-status chip. Color encodes workflow state.",
+      "html": "<span class=\"ds-status ds-status--success\">COMPLETED</span>",
+      "css": ".ds-status { display: inline-block; min-width: 16px; min-height: 16px; padding: 8px; border-radius: 8px; font-family: 'Noto Sans', Arial, sans-serif; font-size: 12px; font-weight: 600; color: #DEDEE7; line-height: 1; } .ds-status--success { background: #57b143; } .ds-status--warning { background: #b18c43; } .ds-status--error { background: #b14357; } .ds-status--primary { background: #6743b2; } .ds-status--muted { background: #bfbfc2; color: #202024; }"
+    },
+    {
+      "name": "Navigation Header",
+      "kind": "nav",
+      "description": "Sticky top bar. Deep surface, violet for active items, ghost for inactive.",
+      "html": "<header class=\"ds-header\"><span class=\"ds-header__brand\">Manager</span><nav class=\"ds-header__nav\"><a class=\"ds-nav-item ds-nav-item--active\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></svg>Dashboard</a><a class=\"ds-nav-item\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M9 9h6M9 13h6M9 17h4\"/></svg>Anfragen</a></nav></header>",
+      "css": ".ds-header { position: sticky; top: 0; display: grid; grid-template-columns: 0.5fr 2fr 0.5fr; gap: 12px; align-items: center; width: 100%; padding: 9px; background: #131316; } .ds-header__brand { font-family: 'Noto Sans', Arial, sans-serif; font-size: 14px; font-weight: 600; color: #DEDEE7; } .ds-header__nav { display: flex; gap: 16px; align-items: center; justify-content: center; } .ds-nav-item { display: inline-flex; align-items: center; gap: 12px; min-height: 40px; padding: 8px 20px; background: transparent; color: #DEDEE7; border-radius: 4px; font-family: 'Noto Sans', Arial, sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: background 0.3s; } .ds-nav-item:hover { background: rgba(250,250,250,0.04); } .ds-nav-item--active { background: #7c59bc; } .ds-nav-item--active:hover { background: #8f70c6; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Workshop Ledger",
+    "overview": "ProductManager is built on the logic of a well-kept technical record: every row has a purpose, every column is labeled, and nothing is there because it looked good. The dark substrate is not aesthetic preference — it's the natural context of a workshop environment where people work long shifts and the interface should recede, leaving only the content lit. The purple accent appears selectively, like ink on a ledger: marking what's actionable, signaling current state, never decorating.\n\nThe system earns trust through consistency. A button looks the same whether you're an admin or a customer. A status badge carries the same weight across every view. The hierarchy is communicated through spacing rhythm and font weight, not through visual flourish. Depth comes from layered dark surfaces — the header sits at the absolute base (#131316), the body one step up (#18181B), cards and inputs another step up (#202024) — with no shadows needed because the tonal separation is clear.\n\nThis system explicitly rejects the generic SaaS clone aesthetic and the enterprise bloat of over-chromed tools.",
+    "keyCharacteristics": [
+      "Single-family typography (Noto Sans variable) across all roles — no decorative pairing",
+      "Flat-by-default elevation: tonal layering over shadows, ghost borders over static strokes",
+      "Semantic color vocabulary that maps 1:1 to repair workflow states",
+      "PC-only hover transitions — touch devices get instant feedback",
+      "Invertible light/dark theme: the dark gray and light gray scales swap symmetrically",
+      "Technical Violet used exclusively for primary actions, active selection, and focus indicators — never decoration"
+    ],
+    "rules": [
+      { "name": "The One Signal Rule",       "body": "Technical Violet appears only on primary actions, active selection, and focus indication. It must never appear as a decorative tint, card accent, or section header. Its scarcity is the trust signal.", "section": "colors" },
+      { "name": "The Semantic Lock Rule",     "body": "Success green, warning amber, error rose, and info teal are reserved exclusively for state communication. They do not appear as branding, section differentiation, or visual interest.", "section": "colors" },
+      { "name": "The Tonal Stack Rule",       "body": "Dark surfaces are never at the same depth as their containers. The three-layer stack (surface-deep → surface-base → surface-elevated) must remain legible without shadow.", "section": "elevation" },
+      { "name": "The One Family Rule",        "body": "Noto Sans only. Do not introduce a display typeface for headings, a mono face for data, or a serif for editorial pull-quotes. The system has no editorial ambitions; it is a tool.", "section": "typography" },
+      { "name": "The Weight Hierarchy Rule",  "body": "Weight 600 = interactive or labeling. Weight 400 = descriptive or passive. Never invert these.", "section": "typography" },
+      { "name": "The Flat-by-Default Rule",   "body": "Add no shadows to new components. If something needs to feel 'elevated,' use a darker background container or a ghost border, not a drop shadow.", "section": "elevation" },
+      { "name": "The Ghost Border Rule",      "body": "Interactive containers use a transparent 2px border at rest. Never a visible static stroke. The border appears only on hover and focus.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use surface-elevated (#202024) as the background for inputs and interactive containers. Always pair with a ghost border.",
+      "Do use Technical Violet (#7c59bc) as the single interactive accent.",
+      "Do use 600 weight for all interactive labels and 400 for descriptive body copy.",
+      "Do communicate status through the semantic color map — repair states are immutable to their colors.",
+      "Do apply hover transitions with @include pc / @include hover only. Touch users get instant state changes.",
+      "Do use ghost borders (transparent 2px at rest, colored on hover/focus) for all interactive containers.",
+      "Do keep the three-layer tonal stack intact: #131316 → #18181B → #202024.",
+      "Do give every interactive component all five states: default, hover, focus, active, disabled.",
+      "Do respect prefers-reduced-motion. Every transition and animation must have an instant fallback."
+    ],
+    "donts": [
+      "Don't use Technical Violet as a decorative color, section background, card tint, or illustration element.",
+      "Don't introduce a second typeface. NotoSans handles every role.",
+      "Don't add box-shadows. Depth is tonal.",
+      "Don't build components that look like Generic SaaS clones (Linear/Notion: teal/blue accents, identical card grids, all-caps tracked eyebrows).",
+      "Don't build Enterprise bloat (SAP/Jira: dense chrome, modal-within-modal, status fields that need training).",
+      "Don't use border-left greater than 1px as a colored stripe accent on cards or list items.",
+      "Don't use gradient text (background-clip: text).",
+      "Don't apply orchestrated page-load sequences or stagger animations across sections.",
+      "Don't use display-weight type for labels, buttons, or status indicators.",
+      "Don't put a modal in front of an action that could be done inline."
+    ]
+  }
+}

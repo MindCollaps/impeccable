@@ -1,0 +1,47 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [
+      "public/brandkit.html",
+      "app/components/repair/RepairTimeline.vue"
+    ],
+    "ignoreValues": [
+      {
+        "rule": "design-system-radius",
+        "value": "999px",
+        "reason": "Intentional pill-shape technique for badge elements; not a rounded-scale value",
+        "createdAt": "2026-06-27T08:09:02.791Z"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "14px",
+        "reason": "Intentional: landing page feature card body radius; softer than tool-UI xs/sm scale",
+        "createdAt": "2026-06-27T08:19:04.578Z"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "10px",
+        "reason": "Intentional: landing page icon wrap radius; mid-value between xs and pill, appropriate for landing surface",
+        "createdAt": "2026-06-27T08:19:04.618Z"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "6px",
+        "reason": "Intentional: skeleton placeholder bar uses 6px on 10px-tall element for standard pill-like skeleton appearance",
+        "createdAt": "2026-06-27T08:19:21.154Z"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "16px",
+        "reason": "Matches RepairWorkItemCard card radius; user confirmed as intentional card-level radius",
+        "createdAt": "2026-06-28T22:44:25.064Z"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "3px",
+        "reason": "Gantt bar sits 1px inset from 4px track — intentional depth, not scale drift",
+        "createdAt": "2026-06-29T07:45:00.000Z"
+      }
+    ]
+  }
+}
